@@ -1,38 +1,46 @@
+import java.time.LocalDateTime;
+
 public class Entrada {
-    
-    private String placa;
-    private String dataHoraEntrada;
-    private String dataHoraSaida;
-    private double quantHoras;
+  private String placa;
+  private LocalDateTime dataHora;
+  private Estacionamento estacionamento;
 
+  public Entrada(String placa, LocalDateTime dataHora, Estacionamento estacionamento) {
+    this.placa = placa;
+    this.dataHora = dataHora;
+    this.estacionamento = estacionamento;
+  }
 
-    public Entrada(String placa, String dataHoraEntrada, String dataHoraSaida, double quantHoras) {
-        this.placa = placa;
-        this.dataHoraEntrada = dataHoraEntrada;
-        this.dataHoraSaida = dataHoraSaida;
-        this.quantHoras = quantHoras;
-    
-    }
+	public String getPlaca() {
+		return placa;
+	}
 
+	public void setPlaca(String placa) {
+		this.placa = placa;
+	}
 
-    public String getPlaca() {
-        return placa;
-    }
+	public LocalDateTime getDataHora() {
+		return dataHora;
+	}
 
+	public void setDataHora(LocalDateTime dataHora) {
+		this.dataHora = dataHora;
+	}
 
-    public String getDataHoraEntrada() {
-        return dataHoraEntrada;
-    }
+  public Estacionamento getEstacionamento() {
+    return estacionamento;
+  }
 
+  public void setEstacionamento(Estacionamento estacionamento) {
+    this.estacionamento = estacionamento;
+  }
 
-    public String getDataHoraSaida() {
-        return dataHoraSaida;
-    }
-
-
-    public double getQuantHoras() {
-        return quantHoras;
-    }
-
-
+  @Override
+  public String toString() {
+    return "[" +
+              "placa = " + placa + ", " +
+              "dataHora = " + dataHora + ", " +
+              "estacionamento = " + estacionamento
+            + "]";
+  }
 }
